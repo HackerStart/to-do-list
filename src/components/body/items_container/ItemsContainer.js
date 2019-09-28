@@ -1,5 +1,6 @@
 import React from "react";
 import "./ItemsContainer.css";
+import Item from "./Item";
 
 class ItemsContainer extends React.Component {
   constructor(props) {
@@ -27,15 +28,7 @@ class ItemsContainer extends React.Component {
       <div>
         <ol>
           {this.state.map((item) => {
-            return (
-              <li className={item.isChecked ? "checked" : ""}>
-                <input
-                  type="checkbox"
-                  checked={item.isChecked}
-                  className="checkbox"></input>
-                <span>{item.name}</span>
-              </li>
-            );
+            return <Item item={item}></Item>;
           })}
         </ol>
       </div>
