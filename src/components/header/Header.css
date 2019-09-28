@@ -1,4 +1,7 @@
-.header {
-  background-color: blue;
-  height: 100px;
+.title {
+  margin: 0px;
+}
+
+.sub-title {
+  margin: 5px;
 }
