@@ -4,7 +4,9 @@ import "./ItemsContainer.css";
 class Item extends React.Component {
   render() {
     return (
-      <li className={this.props.item.isChecked ? "checked" : ""}>
+      <li
+        id="this.props.id"
+        className={this.props.item.isChecked ? "checked" : ""}>
         <input
           type="checkbox"
           checked={this.props.item.isChecked}

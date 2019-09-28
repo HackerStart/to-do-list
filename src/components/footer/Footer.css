@@ -1,4 +1,19 @@
 .footer {
-  background-color: bisque;
-  height: 70px;
+  margin-bottom: -20px;
+  padding: 0px;
+}
+.filters {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.filters li a {
+  color: #fc999b;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
 }
