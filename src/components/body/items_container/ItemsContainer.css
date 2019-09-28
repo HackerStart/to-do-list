@@ -1,0 +1,18 @@
+ol {
+  padding-left: 20px;
+}
+
+ol li {
+  padding: 5px;
+}
+
+.checked {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.checkbox {
+  margin-right: 5px;
+  margin-left: 0px;
+  margin-bottom: 2px;
+}
