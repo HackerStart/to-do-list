@@ -9,7 +9,7 @@ class Item extends React.Component {
         className={this.props.item.isChecked ? "checked" : ""}>
         <input
           type="checkbox"
-          checked={this.props.item.isChecked}
+          defaultChecked={this.props.item.isChecked}
           className="checkbox"></input>
         <span>{this.props.item.name}</span>
       </li>
