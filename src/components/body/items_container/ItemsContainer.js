@@ -12,7 +12,12 @@ class ItemsContainer extends React.Component {
       <div>
         <ol>
           {this.props.todoItems.map((item) => {
-            return <Item key={item.id} item={item}></Item>;
+            return (
+              <Item
+                key={item.id}
+                item={item}
+                setItemsState={this.props.handleItemsState}></Item>
+            );
           })}
         </ol>
       </div>

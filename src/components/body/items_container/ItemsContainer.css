@@ -16,3 +16,8 @@ ol li {
   margin-left: 0px;
   margin-bottom: 2px;
 }
+
+.completed {
+  color: #ccc;
+  text-decoration: line-through;
+}

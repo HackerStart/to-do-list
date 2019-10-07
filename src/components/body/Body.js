@@ -10,6 +10,7 @@ class Body extends React.Component {
       items: []
     };
     this.addToDoItems = this.addToDoItems.bind(this);
+    this.handleItemsState = this.handleItemsState.bind(this);
   }
 
   addToDoItems(info) {
@@ -27,11 +28,27 @@ class Body extends React.Component {
     });
   }
 
+  handleItemsState(id, isChecked) {
+    this.setState((state) => {
+      const items = state.items.map((item) => {
+        if (item.id === id) {
+          item.isChecked = isChecked;
+        }
+        return item;
+      });
+      return {
+        items
+      };
+    });
+  }
+
   render() {
     return (
       <div>
         <AddItems addToDoItems={this.addToDoItems}></AddItems>
-        <ItemsContainer todoItems={this.state.items}></ItemsContainer>
+        <ItemsContainer
+          todoItems={this.state.items}
+          handleItemsState={this.handleItemsState}></ItemsContainer>
       </div>
     );
   }
