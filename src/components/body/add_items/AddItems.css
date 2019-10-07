@@ -6,8 +6,12 @@
 
 .text-input {
   flex-grow: 6;
-  padding: 3px 15px 3px 0;
+  padding: 3px 15px 3px 3px;
   font-size: 15px;
+}
+
+.warning-board {
+  border-color: red;
 }
 
 .add-btn {
