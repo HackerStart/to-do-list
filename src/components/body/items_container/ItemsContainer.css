@@ -17,6 +17,12 @@ ol li {
   margin-bottom: 2px;
 }
 
+.input-text {
+  height: 20px;
+  font-size: 18px;
+  border: 0px;
+}
+
 .completed {
   color: #ccc;
   text-decoration: line-through;

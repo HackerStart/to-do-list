@@ -16,7 +16,8 @@ class ItemsContainer extends React.Component {
               <Item
                 key={item.id}
                 item={item}
-                setItemsState={this.props.handleItemsState}></Item>
+                setItemsState={this.props.handleItemsState}
+                changeItemsText={this.props.changeItemsText}></Item>
             );
           })}
         </ol>

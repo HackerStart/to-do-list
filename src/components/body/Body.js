@@ -12,6 +12,7 @@ class Body extends React.Component {
     };
     this.addToDoItems = this.addToDoItems.bind(this);
     this.handleItemsState = this.handleItemsState.bind(this);
+    this.changeItemsText = this.changeItemsText.bind(this);
   }
 
   filterTodoItems(condition) {
@@ -69,13 +70,28 @@ class Body extends React.Component {
     });
   }
 
+  changeItemsText(id, text) {
+    this.setState((state) => {
+      const items = state.items.map((item) => {
+        if (item.id === id) {
+          item.name = text;
+        }
+        return item;
+      });
+      return {
+        items
+      };
+    });
+  }
+
   render() {
     return (
       <div>
         <AddItems addToDoItems={this.addToDoItems}></AddItems>
         <ItemsContainer
           todoItems={this.state.filteredItems}
-          handleItemsState={this.handleItemsState}></ItemsContainer>
+          handleItemsState={this.handleItemsState}
+          changeItemsText={this.changeItemsText}></ItemsContainer>
       </div>
     );
   }
