@@ -7,10 +7,36 @@ class Body extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
+      items: [],
+      filteredItems: []
     };
     this.addToDoItems = this.addToDoItems.bind(this);
     this.handleItemsState = this.handleItemsState.bind(this);
+  }
+
+  filterTodoItems(condition) {
+    switch (condition) {
+      case "Active":
+        this.setState((state) => {
+          return {
+            filteredItems: state.items.filter((item) => !item.isChecked)
+          };
+        });
+        break;
+      case "Completed":
+        this.setState((state) => {
+          return {
+            filteredItems: state.items.filter((item) => item.isChecked)
+          };
+        });
+        break;
+      case "All":
+      default:
+        this.setState({
+          filteredItems: this.state.items
+        });
+        break;
+    }
   }
 
   addToDoItems(info) {
@@ -23,7 +49,8 @@ class Body extends React.Component {
         }
       ]);
       return {
-        items
+        items: items,
+        filteredItems: items
       };
     });
   }
@@ -47,7 +74,7 @@ class Body extends React.Component {
       <div>
         <AddItems addToDoItems={this.addToDoItems}></AddItems>
         <ItemsContainer
-          todoItems={this.state.items}
+          todoItems={this.state.filteredItems}
           handleItemsState={this.handleItemsState}></ItemsContainer>
       </div>
     );
