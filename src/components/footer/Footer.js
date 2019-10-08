@@ -5,29 +5,46 @@ class Footer extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
+    this.state = {
+      filterCondition: "All"
+    };
   }
+
+  filterTodoItems(condition) {
+    this.props.filterTodoItems(condition);
+    this.setState({ filterCondition: condition });
+  }
+
   render() {
     return (
       <div className="footer">
         <ul className="filters">
           <li>
-            <a href="#" onClick={(e) => this.props.filterTodoItems("All", e)}>
+            <button
+              className={
+                this.state.filterCondition === "All" ? "filetered" : "btn"
+              }
+              onClick={(e) => this.filterTodoItems("All", e)}>
               ALL
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#"
-              onClick={(e) => this.props.filterTodoItems("Active", e)}>
+            <button
+              className={
+                this.state.filterCondition === "Active" ? "filetered" : "btn"
+              }
+              onClick={(e) => this.filterTodoItems("Active", e)}>
               Active
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#"
-              onClick={(e) => this.props.filterTodoItems("Completed", e)}>
+            <button
+              className={
+                this.state.filterCondition === "Completed" ? "filetered" : "btn"
+              }
+              onClick={(e) => this.filterTodoItems("Completed", e)}>
               Completed
-            </a>
+            </button>
           </li>
         </ul>
       </div>

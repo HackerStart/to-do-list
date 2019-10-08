@@ -9,11 +9,23 @@
   justify-content: center;
 }
 
-.filters li a {
+.btn {
   color: #fc999b;
   margin: 3px;
   padding: 3px 7px;
-  text-decoration: none;
   border: 1px solid transparent;
   border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.filetered {
+  border: 1px solid #fc999b;
+  background-color: #fc999b;
+  color: #fff;
+  margin: 3px;
+  padding: 3px 7px;
+  border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
 }
